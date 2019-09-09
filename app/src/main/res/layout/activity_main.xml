@@ -11,6 +11,7 @@
         android:id="@+id/btnAvancar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
         android:layout_marginBottom="8dp"
         android:text="@string/enviar"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -18,50 +19,79 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edtPeso"
-        app:layout_constraintVertical_bias="0.187" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/txtViewAltura"
         android:layout_width="wrap_content"
         android:layout_height="16dp"
         android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
         android:text="Altura"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/edtAltura"
+        app:layout_constraintEnd_toStartOf="@+id/edtAltura"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/edtAltura" />
+        app:layout_constraintTop_toTopOf="@+id/edtAltura"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/txtViewPeso"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
         android:text="Peso"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/edtPeso"
+        app:layout_constraintEnd_toStartOf="@+id/edtPeso"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/edtPeso" />
+        app:layout_constraintTop_toTopOf="@+id/edtPeso"
+        app:layout_constraintVertical_bias="0.0" />
 
     <EditText
         android:id="@+id/edtAltura"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginEnd="16dp"
         android:ems="10"
+        android:hint="Informe uma altura"
         android:inputType="numberDecimal"
         app:layout_constraintBottom_toTopOf="@+id/edtPeso"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 
     <EditText
         android:id="@+id/edtPeso"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="70dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="16dp"
         android:ems="10"
+        android:hint="Informe um peso"
         android:inputType="numberDecimal"
         app:layout_constraintEnd_toEndOf="@+id/edtAltura"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/edtAltura"
         app:layout_constraintTop_toBottomOf="@+id/edtAltura" />
+
+    <TextView
+        android:id="@+id/textViewNomeApp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="32dp"
+        android:text="Aplicativo para calcular seu IMC"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/edtAltura"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

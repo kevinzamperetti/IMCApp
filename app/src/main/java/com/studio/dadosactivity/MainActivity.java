@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -16,6 +17,9 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+        getSupportActionBar().hide(); //esconde actionBar com nome do projeto
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
@@ -27,11 +31,16 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                Intent intent = new Intent(getApplicationContext(), segundaActivity.class);
-                // 1 Parâmetro: Identificador do dado a ser passado, 2 Parâmetro: dado a ser passado - Isso será adicionado na varíavel
-                intent.putExtra("altura", edtAltura.getText().toString());
-                intent.putExtra("peso", edtPeso.getText().toString());
-                startActivity(intent);
+                if ( edtAltura.getText().toString().equals("") || edtPeso.getText().toString().equals("") ) {
+                    Toast.makeText( getApplicationContext(), "Para calcular o IMC é necessário informar os dois campos", Toast.LENGTH_LONG ).show();
+                } else {
+                    Intent intent = new Intent(getApplicationContext(), segundaActivity.class);
+                    // 1 Parâmetro: Identificador do dado a ser passado, 2 Parâmetro: dado a ser passado - Isso será adicionado na varíavel
+                    intent.putExtra("altura", edtAltura.getText().toString());
+                    intent.putExtra("peso", edtPeso.getText().toString());
+                    startActivity(intent);
+                }
+
             }
         });
     }
